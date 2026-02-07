@@ -1,1 +1,2 @@
-En esta carpeta guardamos los componentes que no responden a las rutas de la página (spa)
+En esta carpeta guardamos el componente router que genera las rutas
+además tendremos dos subcarpetas para guardar los componentes loaders, y actions
