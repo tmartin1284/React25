@@ -1,7 +1,7 @@
 import Navegacion2 from "../components/Navegacion2";
 import Navegacion from "../components/Navegacion";
 import Comp2 from "../components/Comp2";
-import { Outlet } from "react-router";
+import { Outlet } from "react-router-dom";
 
 export const RootLayout = () => (
   <>

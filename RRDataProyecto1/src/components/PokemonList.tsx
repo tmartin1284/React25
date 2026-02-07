@@ -1,10 +1,10 @@
-import { type Pokemon } from "../types/interfaces";
+import { type PokemonBasic } from "../types/interfaces";
 import PokemonItem from "./PokemonItem";
 
 export default function PokemonList({
   pokemonsList,
 }: {
-  pokemonsList: Pokemon[];
+  pokemonsList: PokemonBasic[];
 }) {
   if (!pokemonsList || pokemonsList.length === 0) {
     return (

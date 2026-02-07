@@ -1,10 +1,10 @@
-import { NavLink, type NavLinkRenderProps } from "react-router";
+import { NavLink, type NavLinkRenderProps } from "react-router-dom";
 
 export default function Navegacion2() {
   return (
     <>
       <div style={{ background: "GreenYellow" }}>
-        <p>Ejemplo de componente con React Rourter Declarativo. </p>
+        <p>Ejemplo de componente con React Rourter Data. . </p>
         <nav style={{ display: "flex", gap: "1rem" }}>
           <NavLink
             to="/"

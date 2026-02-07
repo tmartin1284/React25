@@ -1,10 +1,10 @@
 //este archivo no se ha editado respecto a la versión declarativa
 
-import type { Pokemon } from "../types/interfaces";
+import type { Pokemon, PokemonBasic } from "../types/interfaces";
 
 const API_URL = "https://pokeapi.co/api/v2/pokemon";
 
-export async function getPokemons(): Promise<Pokemon[]> {
+export async function getPokemons(): Promise<PokemonBasic[]> {
   const response = await fetch(API_URL);
   if (!response.ok) {
     throw new Error("Error fetching users");
