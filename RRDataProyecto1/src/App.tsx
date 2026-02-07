@@ -1,8 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import Navegacion from "./components/Navegacion";
-
 import Navegacion2 from "./components/Navegacion2";
-import router from "./router/router.tsx";
+import { router } from "./router/router.tsx";
 import "./App.css";
 
 export default function App() {

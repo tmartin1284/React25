@@ -1,26 +1,25 @@
 import { createBrowserRouter } from "react-router-dom";
 
-// Importar componentes
-import Navegacion2 from "../components/Navegacion2";
-import Pokemons from "../pages/Pokemons";
-import Inicio from "../pages/Inicio";
-import Sobre from "../pages/Sobre";
-import DetallePokemon from "../pages/DetallePokemon";
-import Error from "../pages/Error";
-import Tomas from "../pages/Tomas";
-import Txupito from "../pages/Txupito";
-import Comp2 from "../components/Comp2";
-import PokeError from "../pages/PokeError";
+// Importar componentes pagina
+
+import Pokemons from "../pages/PokemonsPage";
+import Inicio from "../pages/InicioPagePage";
+import Sobre from "../pages/SobrePage";
+import DetallePokemon from "../pages/DetallePokemonPage";
+import Error from "../pages/ErrorPage";
+import Tomas from "../pages/TomasPage";
+import Txupito from "../pages/TxupitoPage";
+import PokeError from "../pages/PokeErrorPage";
 import Vacio from "../components/vacio";
 
 // Layout raíz
-const RootLayout = () => (
-  <>
-    <Comp2 />
-    <Navegacion2 />
-  </>
-);
+import { RootLayout } from "../layouts/rootLayout";
 
+// Loaders
+import { pokemonsLoader } from "./loaders/pokemonsLoader";
+import { pokemonDetalleLoader } from "./loaders/pokemonDetalleLoader";
+
+//ahora el componente router se encarga de definir las rutas, los loaders y el layout raíz. El layout raíz es el que se renderiza siempre, y dentro de él se renderizan los componentes correspondientes a cada ruta a través del Outlet. Además, se define un errorElement para manejar las rutas no encontradas o errores en la carga de datos.
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -56,10 +55,12 @@ export const router = createBrowserRouter([
           {
             index: true,
             element: <Pokemons />,
+            loader: pokemonsLoader,
           },
           {
             path: ":pokemonId",
             element: <DetallePokemon />,
+            loader: pokemonDetalleLoader,
           },
         ],
       },
@@ -74,5 +75,3 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-
-export default router;
