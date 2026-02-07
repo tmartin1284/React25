@@ -9,6 +9,7 @@ interface ActionData {
 export default function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
   const actionData = useActionData() as ActionData | undefined;
   const [isFavorite, setIsFavorite] = useState(false);
+  const [tempMessage, setTempMessage] = useState<string | null>(null);
 
   // Verificar si el pokémon está en favoritos al cargar
   useEffect(() => {
@@ -23,6 +24,18 @@ export default function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
       setIsFavorite(favorites.includes(pokemon?.name));
     }
   }, [actionData, pokemon?.name]);
+
+  useEffect(() => {
+    if (actionData?.message) {
+      setTempMessage(actionData.message);
+
+      const timer = setTimeout(() => {
+        setTempMessage(null);
+      }, 2000); // 2 segundos
+
+      return () => clearTimeout(timer);
+    }
+  }, [actionData]);
 
   if (!pokemon) {
     return <div>Cargando...</div>;
@@ -131,7 +144,7 @@ export default function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
           </Form>
         )}
 
-        {actionData && (
+        {tempMessage && actionData && (
           <p
             style={{
               marginTop: "10px",
@@ -141,7 +154,7 @@ export default function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
               borderRadius: "5px",
             }}
           >
-            {actionData.message}
+            {tempMessage}
           </p>
         )}
       </div>

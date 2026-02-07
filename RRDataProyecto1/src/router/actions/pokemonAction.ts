@@ -9,9 +9,9 @@ interface FavoriteResponse {
 
 export async function pokemonAction({
   request,
-  params,
+  //params,
 }: ActionFunctionArgs): Promise<FavoriteResponse> {
-  const pokemonId = params.pokemonId;
+  //const pokemonId = params.pokemonId;
 
   if (request.method === "POST") {
     const formData = await request.formData();
