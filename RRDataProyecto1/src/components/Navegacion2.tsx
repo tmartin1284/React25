@@ -1,4 +1,4 @@
-import { NavLink, type NavLinkRenderProps } from "react-router-dom";
+import { NavLink, type NavLinkRenderProps } from "react-router";
 
 export default function Navegacion2() {
   return (

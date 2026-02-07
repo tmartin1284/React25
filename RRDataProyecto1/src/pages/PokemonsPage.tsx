@@ -1,5 +1,5 @@
 import { type Pokemon } from "../types/interfaces";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router";
 //import { Link } from "react-router-dom";
 import PokemonList from "../components/PokemonList";
 
