@@ -52,7 +52,7 @@ export async function pokemonAction({
 
       const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
       const updatedFavorites = favorites.filter(
-        (fav: string) => fav !== pokemonName
+        (fav: string) => fav !== pokemonName,
       );
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
 
