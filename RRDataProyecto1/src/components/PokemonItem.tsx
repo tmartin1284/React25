@@ -1,5 +1,5 @@
 import { type Pokemon } from "../types/interfaces";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function PokemonItem({ pokemon }: { pokemon: Pokemon }) {
   return (

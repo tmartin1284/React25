@@ -1,7 +1,8 @@
 //este archivo no se ha editado respecto a la versión declarativa
 
-const API_URL = "https://pokeapi.co/api/v2/pokemon";
 import type { Pokemon } from "../types/interfaces";
+
+const API_URL = "https://pokeapi.co/api/v2/pokemon";
 
 export async function getPokemons(): Promise<Pokemon[]> {
   const response = await fetch(API_URL);

@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+import { useLoaderData } from "react-router-dom";
 import type { Pokemon } from "../types/interfaces";
 import PokemonCard from "../components/PokemonCard";
 
