@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-export default function Tomas() {
+export default function Tomas({
+  loaderData,
+  actionData,
+  params,
+  matches,
+}: Route.ComponentProps) {
   const navigate = useNavigate();
   return (
     <>

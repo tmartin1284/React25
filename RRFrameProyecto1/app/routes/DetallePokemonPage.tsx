@@ -1,4 +1,46 @@
-import type { ActionFunctionArgs } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import type { Pokemon } from "../types/interfaces";
+import PokemonCard from "../components/PokemonCard";
+import { type Route } from "./+types/DetallePokemonPage";
+
+const API_URL = "https://pokeapi.co/api/v2/pokemon";
+
+//en RRData era
+//export async function pokemonDetalleLoader({ params }: LoaderFunctionArgs) {
+//y estaba en ewl archivo pokemonDetalleLoader.tsx, pero ahora lo he movido a esta misma ruta y lo exporto desde aqui, para que quede todo mas ordenado y no tener tantos archivos sueltos
+
+export async function clientLoader({ params }: LoaderFunctionArgs) {
+  const pokemonId = params.pokemonId;
+
+  if (!pokemonId) {
+    throw new Response("Pokemon ID not provided", { status: 400 });
+  }
+
+  return await getPokemonByID(pokemonId);
+}
+
+//este archivo no se ha editado respecto a la versión declarativa
+
+export async function getPokemonByID(
+  idPokemon: string,
+): Promise<Pokemon | null> {
+  const response = await fetch(`${API_URL}/${idPokemon}`);
+  if (!response.ok) {
+    throw new Error("Error fetching pokemon by ID");
+  }
+  return response.json();
+}
+
+/*ESta función antes se llamaba
+export async function pokemonAction({
+  request,
+  //params,
+}: ActionFunctionArgs): Promise<FavoriteResponse> {
+
+estaba en su propio archivo pokemonAction.tsx, pero ahora lo he movido a esta misma ruta y lo exporto desde aqui, para que quede todo mas ordenado y no tener tantos archivos sueltos
+
+Haremos uso de ella desde los propios componentes
+*/
 
 interface FavoriteResponse {
   success: boolean;
@@ -7,7 +49,7 @@ interface FavoriteResponse {
   pokemonName?: string;
 }
 
-export async function pokemonAction({
+export async function clientAction({
   request,
   //params,
 }: ActionFunctionArgs): Promise<FavoriteResponse> {
@@ -72,4 +114,20 @@ export async function pokemonAction({
     message: "Acción no soportada",
     action: "unknown",
   };
+}
+
+//aqui empieza el componente
+
+export default function DetallePokemon({
+  loaderData,
+  actionData,
+  params,
+  matches,
+}: Route.ComponentProps) {
+  const pokemon = useLoaderData() as Pokemon;
+  return (
+    <div>
+      <PokemonCard pokemon={pokemon} />
+    </div>
+  );
 }

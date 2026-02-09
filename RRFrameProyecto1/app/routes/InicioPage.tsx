@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
-export default function Inicio() {
+export default function Inicio({
+  loaderData,
+  actionData,
+  params,
+  matches,
+}: Route.ComponentProps) {
   return (
     <>
       <div style={{ background: "Gold" }}>

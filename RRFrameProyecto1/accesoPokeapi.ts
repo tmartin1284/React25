@@ -1,6 +1,7 @@
-//este archivo no se ha editado respecto a la versión declarativa
+//este archivo no se ha editado respecto a la versión decl
+//en la version framework hay que quitarlo
 
-import type { Pokemon, PokemonBasic } from "../types/interfaces";
+import type { Pokemon, PokemonBasic } from "./app/types/interfaces";
 
 const API_URL = "https://pokeapi.co/api/v2/pokemon";
 

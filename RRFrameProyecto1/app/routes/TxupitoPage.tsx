@@ -1,4 +1,9 @@
-export default function Txupito() {
+export default function Txupito({
+  loaderData,
+  actionData,
+  params,
+  matches,
+}: Route.ComponentProps) {
   return (
     <>
       <div style={{ background: "PowderBlue " }}>

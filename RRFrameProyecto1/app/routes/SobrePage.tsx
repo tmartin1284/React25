@@ -1,6 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 
-export default function Sobre() {
+export default function Sobre({
+  loaderData,
+  actionData,
+  params,
+  matches,
+}: Route.ComponentProps) {
   return (
     <>
       <div style={{ background: "Bisque" }}>

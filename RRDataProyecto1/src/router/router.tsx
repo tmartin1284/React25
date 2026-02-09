@@ -25,7 +25,6 @@ import { pokemonAction } from "./actions/pokemonAction";
 //ahora el componente router se encarga de definir las rutas, los loaders y el layout raíz. El layout raíz es el que se renderiza siempre, y dentro de él se renderizan los componentes correspondientes a cada ruta a través del Outlet. Además, se define un errorElement para manejar las rutas no encontradas o errores en la carga de datos.
 export const router = createBrowserRouter([
   {
-    path: "/",
     element: <RootLayout />,
     errorElement: <Error />,
     children: [
