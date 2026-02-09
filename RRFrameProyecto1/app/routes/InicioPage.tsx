@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import { type Route } from "../../.react-router/types/app/routes/+types/InicioPage.ts";
 
-export default function Inicio({
+export default function InicioPage({
   loaderData,
   actionData,
   params,

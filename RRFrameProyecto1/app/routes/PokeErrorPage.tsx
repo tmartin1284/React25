@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-export default function PokeError() {
+export default function PokeErrorPage() {
   const { error } = useParams<{ error: string }>();
   const params = useParams();
   console.log("params en PokeError:", params.error);

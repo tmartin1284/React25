@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import type { Pokemon } from "../types/interfaces";
 import PokemonCard from "../components/PokemonCard";
-import { type Route } from "./+types/DetallePokemonPage";
+import { type Route } from "../../.react-router/types/app/routes/+types/DetallePokemonPage.ts";
 
 const API_URL = "https://pokeapi.co/api/v2/pokemon";
 
@@ -9,7 +9,7 @@ const API_URL = "https://pokeapi.co/api/v2/pokemon";
 //export async function pokemonDetalleLoader({ params }: LoaderFunctionArgs) {
 //y estaba en ewl archivo pokemonDetalleLoader.tsx, pero ahora lo he movido a esta misma ruta y lo exporto desde aqui, para que quede todo mas ordenado y no tener tantos archivos sueltos
 
-export async function clientLoader({ params }: LoaderFunctionArgs) {
+export async function clientLoader({ params }: Route.LoaderArgs) {
   const pokemonId = params.pokemonId;
 
   if (!pokemonId) {
@@ -52,7 +52,7 @@ interface FavoriteResponse {
 export async function clientAction({
   request,
   //params,
-}: ActionFunctionArgs): Promise<FavoriteResponse> {
+}: Route.ActionArgs): Promise<FavoriteResponse> {
   //const pokemonId = params.pokemonId;
 
   if (request.method === "POST") {
@@ -118,7 +118,7 @@ export async function clientAction({
 
 //aqui empieza el componente
 
-export default function DetallePokemon({
+export default function DetallePokemonPage({
   loaderData,
   actionData,
   params,

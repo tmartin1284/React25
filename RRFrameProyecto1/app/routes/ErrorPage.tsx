@@ -1,4 +1,4 @@
-export default function Error() {
+export default function ErrorPage() {
   return (
     <>
       <div style={{ background: "red" }}>

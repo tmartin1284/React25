@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { type Route } from "../../.react-router/types/app/routes/+types/TomasPage.ts";
 
-export default function Tomas({
+export default function TomasPage({
   loaderData,
   actionData,
   params,

@@ -2,6 +2,7 @@ import { type PokemonBasic } from "../types/interfaces";
 import { useLoaderData } from "react-router-dom";
 //import { Link } from "react-router-dom";
 import PokemonList from "../components/PokemonList";
+import { type Route } from "../../.react-router/types/app/routes/+types/PokemonsPage.ts";
 
 /*
 Esta función antes se llamaba 
@@ -26,7 +27,7 @@ export async function getPokemons(): Promise<PokemonBasic[]> {
   return data.results;
 }
 
-export default function Pokemons({
+export default function PokemonsPage({
   loaderData,
   actionData,
   params,

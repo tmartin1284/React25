@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
+import { type Route } from "../../.react-router/types/app/routes/+types/SobrePage.ts";
 
-export default function Sobre({
+export default function SobrePage({
   loaderData,
   actionData,
   params,

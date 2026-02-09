@@ -1,4 +1,5 @@
-export default function Txupito({
+import type { Route } from "../../.react-router/types/app/routes/+types/TxupitoPage.ts";
+export default function TxupitoPage({
   loaderData,
   actionData,
   params,
